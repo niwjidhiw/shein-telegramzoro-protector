@@ -211,7 +211,7 @@ def checker_loop():
 
                 # FORMAT MESSAGE
 
-                msg = "ðŸ’Ž YOUR COUPONS\n\n"
+                msg = "💎 YOUR COUPONS\n\n"
                 grouped = {}
 
                 for code in codes:
@@ -222,25 +222,25 @@ def checker_loop():
                         grouped[value] = []
 
                     if any(code == v[0] for v in valid):
-                        grouped[value].append(f"âœ… {code}")
+                        grouped[value].append(f"✅ {code}")
                     else:
-                        grouped[value].append(f"âŒ {code}")
+                        grouped[value].append(f"❌ {code}")
 
                 for value in sorted(grouped.keys(), reverse=True):
 
-                    msg += f"â‚¹{value} Coupons :\n"
+                    msg += f"₹{value} Coupons :\n"
 
                     for line in grouped[value]:
                         msg += f"{line}\n"
 
                     msg += "\n"
 
-                msg += f"ðŸ’° Total Potential Value : â‚¹{total}"
+                msg += f"💰 Total Potential Value : ₹{total}"
                 msg += "\n\nmade by @ItzzZoro01"
 
                 send_message(user_id, msg)
 
-                session.close()   # âœ… Only one close now
+                session.close()   # ✅ Only one close now
 
         except Exception as e:
             print("Checker error:", e)
@@ -353,7 +353,7 @@ def telegram_loop():
 
 def main():
 
-    print("SHEIN TELEGRAM PROTECTOR STARTED")
+    print("ZORO TELEGRAM PROTECTOR STARTED")
 
     threading.Thread(
         target=checker_loop,
